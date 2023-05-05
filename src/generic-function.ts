@@ -23,3 +23,28 @@ interface IMyData {
     name: string
 }
 const result4 = createArray2<IMyData, IMyData>({ name: "Robiul" }, { name: "Sakil Khan" })
+
+
+// spread oparator
+
+// const createNewInfo = (param: object): object => {
+//     const myName = "Robiul Alam"
+//     const newData = { ...param, myName }
+//     return newData
+// }
+const createNewInfo = <T>(param: T): T => {
+    const myName = "Robiul Alam"
+    const newData = { ...param, myName }
+    return newData
+}
+
+
+const myname: string = "Robiul Alam"
+const myInfo = {
+    age: 20,
+    proffesion: "student",
+    address: "Thakurgaon"
+}
+
+const newInfo = { ...myInfo, myname }
+const newInfo1 = createNewInfo(myInfo)
