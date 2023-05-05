@@ -21,3 +21,25 @@ type Area<T> = {
 
 const result: Area<{ name: string }> = ({ name: "Md. Robiul alam" })
 // result.name = "dfdfd"
+
+
+function getArrayItem<T, K extends keyof T>(arr: T[], index: number, key: K): T[K] {
+
+    const item = arr[index];
+
+    return item[key];
+
+}
+const users = [{ name: 'John', age: 30 }, { name: 'Mary', age: 25 },];
+
+console.log(getArrayItem(users, 0, 'name'))
+
+interface Person {
+
+    firstName: string;
+
+    lastName: string;
+
+}
+
+
